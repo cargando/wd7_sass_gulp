@@ -1,0 +1,16 @@
+{
+  "name": "wd7_sass_gulp",
+  "version": "1.0.0",
+  "description": "Проект для изучения SASS с помощью сборщика Gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "spynu sergey",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.12",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.1.0"
+  }
+}
