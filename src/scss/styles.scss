@@ -1,0 +1,209 @@
+@import "contstants.scss";
+
+h1 {
+  color: $header-color;
+}
+
+// знак & - позволяет ссылаться на родителя
+
+.simple {
+  color: $simple-text-color;
+  &__text {
+    // font-family: "Al Tarikh";
+    font: {
+      family: "Verdana";
+    }
+  }
+}
+@media print {
+  // набор правил которые будут использоваться только для принтера
+  .container {
+    &__header1 {
+      color: yellowgreen;
+      text-decoration: #fff underline;
+    }
+    &__content {
+      color: #fff;
+      background-color: #444444;
+      &_disabled {
+        color: darkcyan;
+      }
+    }
+    &__header5 {
+      font-family: ".SF NS Mono";
+    }
+    &__link {
+      color: brown;
+    }
+    @at-root &__test {
+      color: brown;
+    }
+  }
+}
+
+.container {
+  &__header1 {
+    color: blue;
+    text-decoration: #444444 underline;
+  }
+  &__content {
+    color: #444444;
+    background-color: #efefef;
+    &_disabled {
+      color: #afafaf;
+    }
+    &-center {
+      text-align: center;
+    }
+    &-right {
+      text-align: right;
+    }
+  }
+  &__header5 {
+    font-family: ".SF NS Mono2";
+  }
+  &__link {
+    color: brown;
+  }
+}
+//////// EXTEND - расширение (НО не наследование)
+
+.green_text {
+  color: greenyellow;
+  font-weight: bold;
+}
+
+.decoration1 {
+  text-decoration: underline;
+}
+
+.green_text_padding {
+  padding: 10px;
+  @extend .green_text;
+  @extend .decoration1;
+}
+
+// @debug 10 + 10px;
+@warn "some text";
+// @error "some critical error occured";
+
+///// FOR - цилк для генерации однотипных правил (или правил с однотипными именами)
+@for $i from 1 through 10 {
+  .counter_#{ $i } {
+    border: 10px;
+    padding-left: 5px + 5 * $i;
+    &__them {
+      text-decoration: greenyellow;
+    }
+  }
+}
+
+///// WHILE - цикл с условием в начале, т.е. сначала проверяется условие и если ОК, тогда делается тело цикла
+
+$j: 5;
+@while $j > 0 {
+  .counterWhile_#{ $j } {
+    color: darkcyan;
+    margin-left: 5px + $j * 2;
+  }
+  $j: $j - 1;
+}
+
+
+/////// MIXIN - миксины (почти тоже самое что function в JavScript (но не тоже самое)
+@mixin myFirstMixin { // вариант без параметров (аналогия с функцией JavScript), т.е. работает так же как @extend
+  color: blueviolet;
+  font-family: "Al Bayan";
+  font-size: 15px;
+}
+
+.class-with-mixin {
+  @include myFirstMixin;
+  padding: 10px;
+  border: 2px solid #444444;
+}
+
+@mixin mySecondMixin ($width, $height, $color: white) {
+  width: $width;
+  height: $height;
+  padding: 10px;
+  border: 1px dashed $color;
+}
+
+.class-with-mixin2 {
+  @include mySecondMixin(50%, 100px, #efefef);
+  background-color: #444444;
+}
+
+.class-with-mixin3 {
+  @include mySecondMixin(300px, 50px, #aaaaaa);
+  background-color: #444444;
+}
+
+.class-with-mixin4 {
+  @include mySecondMixin(300px, 50px);
+  background-color: #222222;
+}
+
+////// FUNCTION - функции
+
+@function myFirstFunction ($a, $b) {
+    @return $a + $b * 2px;
+}
+
+.class_Function {
+  padding: myFirstFunction(4, 10);
+}
+
+@mixin conditionRender ($a) {
+  @if $a > 5 {
+    color: #aaaaaa;
+    font-size: 20px;
+  } @else {
+    color: #444444;
+    font-size: 13px;
+  }
+}
+
+.classMixinIf {
+  @include conditionRender(4);
+}
+
+.classMixinIf2 {
+  @include conditionRender(6);
+}
+
+////// EACH - цикл для обхода списков
+
+@each $counter in dog, cat, parrot {
+  .icon-#{ $counter } {
+    background-image: url("/img/icons/#{ $counter }.png");
+    width: 50px;
+    height: 50px;
+    border: 1px solid #efefef;
+  }
+
+}
+
+
+/////////
+
+.media__description {
+  font-size: 16px;
+  line-height: 160%;
+  color: $black-color;
+  text-align: center;
+  margin: 0;
+  @media (max-width: $breakpoint-desktop992 - 1) {
+    padding-right: calc(1 / 12 * 100%);
+    padding-left: calc(1 / 12 * 100%);
+  }
+  @media (min-width: $breakpoint-desktop992) and (max-width: $breakpoint-desktop1200 - 1) {
+    padding-right: calc(2 / 12 * 100%);
+    padding-left: calc(2 / 12 * 100%);
+  }
+  @media (min-width: $breakpoint-desktop1200) {
+    padding-right: calc(3 / 12 * 100%);
+    padding-left: calc(3 / 12 * 100%);
+  }
+}

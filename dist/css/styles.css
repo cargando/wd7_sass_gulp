@@ -1,0 +1,209 @@
+h1 {
+  color: red; }
+
+.simple {
+  color: #444; }
+  .simple__text {
+    font-family: "Verdana"; }
+
+@media print {
+  .container__header1 {
+    color: yellowgreen;
+    text-decoration: #fff underline; }
+  .container__content {
+    color: #fff;
+    background-color: #444444; }
+    .container__content_disabled {
+      color: darkcyan; }
+  .container__header5 {
+    font-family: ".SF NS Mono"; }
+  .container__link {
+    color: brown; }
+  .container__test {
+    color: brown; } }
+
+.container__header1 {
+  color: blue;
+  text-decoration: #444444 underline; }
+
+.container__content {
+  color: #444444;
+  background-color: #efefef; }
+  .container__content_disabled {
+    color: #afafaf; }
+  .container__content-center {
+    text-align: center; }
+  .container__content-right {
+    text-align: right; }
+
+.container__header5 {
+  font-family: ".SF NS Mono2"; }
+
+.container__link {
+  color: brown; }
+
+.green_text, .green_text_padding {
+  color: greenyellow;
+  font-weight: bold; }
+
+.decoration1, .green_text_padding {
+  text-decoration: underline; }
+
+.green_text_padding {
+  padding: 10px; }
+
+.counter_1 {
+  border: 10px;
+  padding-left: 10px; }
+  .counter_1__them {
+    text-decoration: greenyellow; }
+
+.counter_2 {
+  border: 10px;
+  padding-left: 15px; }
+  .counter_2__them {
+    text-decoration: greenyellow; }
+
+.counter_3 {
+  border: 10px;
+  padding-left: 20px; }
+  .counter_3__them {
+    text-decoration: greenyellow; }
+
+.counter_4 {
+  border: 10px;
+  padding-left: 25px; }
+  .counter_4__them {
+    text-decoration: greenyellow; }
+
+.counter_5 {
+  border: 10px;
+  padding-left: 30px; }
+  .counter_5__them {
+    text-decoration: greenyellow; }
+
+.counter_6 {
+  border: 10px;
+  padding-left: 35px; }
+  .counter_6__them {
+    text-decoration: greenyellow; }
+
+.counter_7 {
+  border: 10px;
+  padding-left: 40px; }
+  .counter_7__them {
+    text-decoration: greenyellow; }
+
+.counter_8 {
+  border: 10px;
+  padding-left: 45px; }
+  .counter_8__them {
+    text-decoration: greenyellow; }
+
+.counter_9 {
+  border: 10px;
+  padding-left: 50px; }
+  .counter_9__them {
+    text-decoration: greenyellow; }
+
+.counter_10 {
+  border: 10px;
+  padding-left: 55px; }
+  .counter_10__them {
+    text-decoration: greenyellow; }
+
+.counterWhile_5 {
+  color: darkcyan;
+  margin-left: 15px; }
+
+.counterWhile_4 {
+  color: darkcyan;
+  margin-left: 13px; }
+
+.counterWhile_3 {
+  color: darkcyan;
+  margin-left: 11px; }
+
+.counterWhile_2 {
+  color: darkcyan;
+  margin-left: 9px; }
+
+.counterWhile_1 {
+  color: darkcyan;
+  margin-left: 7px; }
+
+.class-with-mixin {
+  color: blueviolet;
+  font-family: "Al Bayan";
+  font-size: 15px;
+  padding: 10px;
+  border: 2px solid #444444; }
+
+.class-with-mixin2 {
+  width: 50%;
+  height: 100px;
+  padding: 10px;
+  border: 1px dashed #efefef;
+  background-color: #444444; }
+
+.class-with-mixin3 {
+  width: 300px;
+  height: 50px;
+  padding: 10px;
+  border: 1px dashed #aaaaaa;
+  background-color: #444444; }
+
+.class-with-mixin4 {
+  width: 300px;
+  height: 50px;
+  padding: 10px;
+  border: 1px dashed white;
+  background-color: #222222; }
+
+.class_Function {
+  padding: 24px; }
+
+.classMixinIf {
+  color: #444444;
+  font-size: 13px; }
+
+.classMixinIf2 {
+  color: #aaaaaa;
+  font-size: 20px; }
+
+.icon-dog {
+  background-image: url("/img/icons/dog.png");
+  width: 50px;
+  height: 50px;
+  border: 1px solid #efefef; }
+
+.icon-cat {
+  background-image: url("/img/icons/cat.png");
+  width: 50px;
+  height: 50px;
+  border: 1px solid #efefef; }
+
+.icon-parrot {
+  background-image: url("/img/icons/parrot.png");
+  width: 50px;
+  height: 50px;
+  border: 1px solid #efefef; }
+
+.media__description {
+  font-size: 16px;
+  line-height: 160%;
+  color: #000000;
+  text-align: center;
+  margin: 0; }
+  @media (max-width: 991px) {
+    .media__description {
+      padding-right: calc(1 / 12 * 100%);
+      padding-left: calc(1 / 12 * 100%); } }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .media__description {
+      padding-right: calc(2 / 12 * 100%);
+      padding-left: calc(2 / 12 * 100%); } }
+  @media (min-width: 1200px) {
+    .media__description {
+      padding-right: calc(3 / 12 * 100%);
+      padding-left: calc(3 / 12 * 100%); } }

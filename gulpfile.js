@@ -23,6 +23,7 @@ gulp.task('server', ['sass'], function() {
 gulp.task('sass', function() {
   return gulp.src("./src/scss/*.+(scss|sass)")
     .pipe(sass())
+    // .pipe(sass.sync({outputStyle: 'compressed'}))
     .pipe(gulp.dest("./src/css"))
     .pipe(gulp.dest("./dist/css"))
     .pipe(browserSync.stream());
@@ -33,4 +34,3 @@ gulp.task('default', ['server']);
 gulp.task("css", function () {
   return gulp.src("./src/css/*.css").pipe(gulp.dest("./dist/css"));
 });
-
