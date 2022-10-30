@@ -9,7 +9,7 @@
   "author": "spynu sergey",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.26.12",
+    "browser-sync": "^2.27.10",
     "gulp": "^3.9.1",
     "gulp-sass": "^4.1.0"
   }
